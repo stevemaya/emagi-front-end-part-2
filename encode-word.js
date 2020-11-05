@@ -2,14 +2,14 @@ const emojis = require('./emojis.js');
 
 
 // string-building version
-const encodeWord = function(word) {
+const encodeWord = function (word) {
     let result = '';
-    let found = false;
     for (const char of word) {
+        let found = false;
         for (const emoji of emojis) {
             if (emoji.letter === char.toLowerCase()) {
-                result += emoji.symbol;
                 found = true;
+                result += emoji.symbol;
             }
         } if (found === false) {
             result += char;
@@ -17,5 +17,5 @@ const encodeWord = function(word) {
     }
     return result;
 };
-
+console.log(encodeWord('pl9h'));
 module.exports = encodeWord;
